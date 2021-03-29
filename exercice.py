@@ -1,5 +1,5 @@
 from math import *
-from random import *
+import os
 import numpy as np
 
 tab_vent = np.loadtxt('vent.txt', dtype=float)
@@ -7,7 +7,7 @@ print(tab_vent)
 print(tab_vent.shape)
 print(tab_vent.size)
 stat = tab_vent[:,3: ]
-def Question2(): #pour chaque dataset
+def Question2(): #pour dataset
     print('vitesse minimal est:', stat.min(), "vitesse max:", stat.max(), "vitesse moyenne: ", stat.mean(),"l'ecart type est: ", stat.std() )
 
 q2 = Question2()
