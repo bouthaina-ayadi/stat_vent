@@ -56,15 +56,7 @@ print("l'année, le mois et le jour où la vitesse du vent la plus élevée a é
  
 #Question 7
 
-def Question7(t):
-    m, r= [], []
-    
-    for i in range(12):
-       m.append(t[: , i].sqrt())
-       
-           
-      
-    yield m
+
     
 
 
