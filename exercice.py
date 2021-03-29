@@ -7,48 +7,65 @@ print(tab_vent)
 print(tab_vent.shape)
 print(tab_vent.size)
 stat = tab_vent[:,3: ]
-def Question2(): #pour dataset
-    print('vitesse minimal est:', stat.min(), "vitesse max:", stat.max(), "vitesse moyenne: ", stat.mean(),"l'ecart type est: ", stat.std() )
+def Question2(t): #pour dataset
+    print('vitesse minimal est:', t.min(), "vitesse max:", t.max(), "vitesse moyenne: ", t.mean(),"l'ecart type est: ", t.std() )
 
-q2 = Question2()
+q2 = Question2(stat)
 print(q2)
-def Question3(): # pour chaque enmplacement
-    l1= []
-    l2 = []
-    l3= []
-    l4= []
+
+def Question3(t): # pour chaque emplacement
+    l1, l2, l3, l4 = [], [], [], []
+    
     for i in range(12):
-       l1.append(stat[: , i].min())
-       l2.append(stat[:, i].max())
-       l3.append(stat[:, i].mean())
-       l4.append(stat[:, i].std())
-    print("le vent minimal pour chaque emplacement:" '\n', l1,'\n', "le vent max est: ", '\n', l2,'\n', "la moyenne est: ", '\n', '\n', l3, '\n', "l'ecart type est: ", '\n', l4 )       
+       l1.append(t[: , i].min())
+       l2.append(t[:, i].max())
+       l3.append(t[:, i].mean())
+       l4.append(t[:, i].std())
+    yield l1 
+    yield l2
+    yield l3
+    yield l4
+    
+    
+li1, li2, li3, li4 = Question3(stat)
+print("le vent minimal pour chaque emplacement:" '\n', li1,'\n', "le vent max est: ", '\n', li2,'\n', "la moyenne est: ", '\n', li3, '\n', "l'ecart type est: ", '\n', li4 )       
 
-q3 = Question3()
-print(q3)
-
-def Question4(): # pour chaque jour
-    c1 = []
-    c2 = []
-    c3 = []
-    c4 = []
-    for j in range(3):
-        c1.append(stat[j, :].min())
-        c2.append(stat[j, :].max())
-        c3.append(stat[j, :].mean())
-        c4.append(stat[j, :].std())
-    print("le vent min pour chaque jour:" '\n', c1,'\n', "le vent max est: ", '\n', c2,'\n', "la moyenne est: ", '\n', '\n', c3, '\n', "l'ecart type est: ", '\n', c4 )       
+def Question4(t): # pour chaque jour
+    c1, c2, c3, c4 = [], [], [], []
    
-q4 = Question4()
-print(q4)
+    for j in range(3):
+        c1.append(t[j, :].min())
+        c2.append(t[j, :].max())
+        c3.append(t[j, :].mean())
+        c4.append(t[j, :].std())
+    yield c1
+    yield c2
+    yield c3
+    yield c4
+   
+ci1, ci2, ci3, ci4 = Question4(stat)
+print("le vent minimal pour chaque jour:" '\n', ci1,'\n', "le vent max est: ", '\n', ci2,'\n', "la moyenne est: ", '\n', ci3, '\n', "l'ecart type est: ", '\n', ci4 )       
 
-a1 = tab_vent[:,0:3]
-print(a1)
 
-print(stat.max(axis=1))
+#Question 5: l'endroit où la vitesse du vent est la plus élevée chaque jour.
 
+print("l'endroit ou la vitesse du vent est la plus élevée chaque jour est: ", max(li2))
 
+#question 6: l'année, le mois et le jour où la vitesse du vent la plus élevée a été enregistrée
+print("l'année, le mois et le jour où la vitesse du vent la plus élevée a été enregistrée est:", )
+ 
+#Question 7
 
+def Question7(t):
+    m, r= [], []
+    
+    for i in range(12):
+       m.append(t[: , i].sqrt())
+       
+           
+      
+    yield m
+    
 
 
         
