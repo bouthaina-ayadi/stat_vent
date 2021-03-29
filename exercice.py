@@ -10,24 +10,20 @@ stat = tab_vent[:,3: ]
 def Question2(t): #pour dataset
     print('vitesse minimal est:', t.min(), "vitesse max:", t.max(), "vitesse moyenne: ", t.mean(),"l'ecart type est: ", t.std() )
 
-q2 = Question2(stat)
-print(q2)
+Question2(stat)
 
-def Question3(t): # pour chaque emplacement
-    l1, l2, l3, l4 = [], [], [], []
+
+def Question3(t, l1, l2, l3, l4): # pour chaque emplacement
     
     for i in range(12):
        l1.append(t[: , i].min())
        l2.append(t[:, i].max())
        l3.append(t[:, i].mean())
        l4.append(t[:, i].std())
-    yield l1 
-    yield l2
-    yield l3
-    yield l4
     
     
-li1, li2, li3, li4 = Question3(stat)
+li1, li2, li3, li4  = [], [], [], []   
+Question3(stat,li1, li2, li3, li4 )
 print("le vent minimal pour chaque emplacement:" '\n', li1,'\n', "le vent max est: ", '\n', li2,'\n', "la moyenne est: ", '\n', li3, '\n', "l'ecart type est: ", '\n', li4 )       
 
 def Question4(t): # pour chaque jour
