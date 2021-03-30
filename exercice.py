@@ -7,13 +7,13 @@ print(tab_vent)
 print(tab_vent.shape)
 print(tab_vent.size)
 stat = tab_vent[:,3: ]
-def Question2(t): #pour dataset
+def dataset(t): #pour dataset
     print('vitesse minimal est:', t.min(), "vitesse max:", t.max(), "vitesse moyenne: ", t.mean(),"l'ecart type est: ", t.std() )
 
-Question2(stat)
+dataset(stat)
 
 
-def Question3(t, l1, l2, l3, l4): # pour chaque emplacement
+def place(t, l1, l2, l3, l4): # pour chaque emplacement
     
     for i in range(12):
        l1.append(t[: , i].min())
@@ -23,10 +23,10 @@ def Question3(t, l1, l2, l3, l4): # pour chaque emplacement
     
     
 li1, li2, li3, li4  = [], [], [], []   
-Question3(stat,li1, li2, li3, li4 )
+place(stat,li1, li2, li3, li4 )
 print("le vent minimal pour chaque emplacement:" '\n', li1,'\n', "le vent max est: ", '\n', li2,'\n', "la moyenne est: ", '\n', li3, '\n', "l'ecart type est: ", '\n', li4 )       
 
-def Question4(t, c1, c2, c3, c4): # pour chaque jour
+def everyDay(t, c1, c2, c3, c4): # pour chaque jour
     
     for j in range(3):
         c1.append(t[j, :].min())
@@ -35,7 +35,7 @@ def Question4(t, c1, c2, c3, c4): # pour chaque jour
         c4.append(t[j, :].std())
    
 ci1, ci2, ci3, ci4  = [], [], [], []
-Question4(stat, ci1, ci2, ci3, ci4)
+everyDay(stat, ci1, ci2, ci3, ci4)
 print("le vent minimal pour chaque jour:" '\n', ci1,'\n', "le vent max est: ", '\n', ci2,'\n', "la moyenne est: ", '\n', ci3, '\n', "l'ecart type est: ", '\n', ci4 )       
 
 
