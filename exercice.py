@@ -49,6 +49,7 @@ def Q5(tab):
 
 Q5(tab_vent)
 #question 6: l'année, le mois et le jour où la vitesse du vent la plus élevée a été enregistrée
+
 print("l'année, le mois et le jour où la vitesse du vent la plus élevée a été enregistrée est:", )
  
 #Question 7
