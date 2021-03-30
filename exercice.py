@@ -2,7 +2,7 @@ from math import *
 import os
 import numpy as np
 
-tab_vent = np.loadtxt('vent.txt', dtype=float)
+tab_vent = np.loadtxt('wind.data', dtype=float)
 print(tab_vent)
 print(tab_vent.shape)
 print(tab_vent.size)
