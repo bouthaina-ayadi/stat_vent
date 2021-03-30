@@ -40,7 +40,7 @@ print("le vent minimal pour chaque jour:" '\n', ci1,'\n', "le vent max est: ", '
 
 
 #Question 5: l'endroit où la vitesse du vent est la plus élevée chaque jour.
-print(tab_vent[0:0, :])
+print(tab_vent([0:0, :], axis = 1))
 print("levitesse le plus élevée le",)
 
 #question 6: l'année, le mois et le jour où la vitesse du vent la plus élevée a été enregistrée
