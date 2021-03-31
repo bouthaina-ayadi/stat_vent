@@ -1,5 +1,4 @@
-from math import *
-import os
+
 import numpy as np
 
 tab_vent = np.loadtxt('wind.data', dtype=float)
